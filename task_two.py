@@ -1,12 +1,11 @@
 import re
-from functools import total_ordering
 from typing import Callable, Generator
 
 
 def generator_numbers(text: str) -> Generator[float, None, None]:
     """ Аналізує текст і повертає генератор дійсних чисел. """
 
-    pattern = r"\b\d+\.\d+\b"
+    pattern = r'\b\d+\.\d+ '
 
     for match in re.finditer(pattern, text):
         yield float(match.group(0))
