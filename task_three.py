@@ -32,7 +32,7 @@ def load_logs(file_path: str) -> List[Dict]:
         return []
 
 
-def filter_log_by_level(logs: List[Dict], level: str) -> List[Dict]:
+def filter_logs_by_level(logs: List[Dict], level: str) -> List[Dict]:
     """ Фільтрує список логів за заданим рівнем. """
 
     return list(filter(lambda log: log['level'].lower() == level.lower(), logs))
@@ -73,7 +73,7 @@ def main():
         display_log_counts(counts)
 
         if log_level_filter:
-            filtered_logs = filter_log_by_level(logs, log_level_filter)
+            filtered_logs = filter_logs_by_level(logs, log_level_filter)
             print(f"\nДеталі логів для рівня {log_level_filter.upper()}:")
             for log in filtered_logs:
                 print(f"{log['date']} {log['time']} {log['message']}")
