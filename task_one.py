@@ -1,7 +1,7 @@
-def caching_fibonachi():
+def caching_fibonacci():
     cache = {}
 
-    def fibonachi(n):
+    def fibonacci(n):
 
         if n <= 0:
             return 0
@@ -9,16 +9,16 @@ def caching_fibonachi():
             return 1
         if n in cache:
             return cache[n]
-        result = fibonachi(n - 1) + fibonachi(n - 2)
+        result = fibonacci(n - 1) + fibonacci(n - 2)
         cache[n] = result
 
         return result
 
-    return fibonachi
+    return fibonacci
 
 
 print("Створюємо наш калькулятор Фібоначчі...")
-fib = caching_fibonachi()
+fib = caching_fibonacci()
 
 print(f"Обчислюємо fib10: {fib(10)}")
 print(f"Обчислюємо fib15: {fib(15)}")
